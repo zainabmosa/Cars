@@ -4,7 +4,7 @@ import pandas as pd
 
 model = joblib.load("model.pkl")
 
-st.title("Car MSRP Prediction")
+st.title("Car Price Prediction 🏎️")
 
 year = st.number_input("Year", min_value=1990, max_value=2017, value=2010)
 engine_hp = st.number_input("Engine HP",min_value=55, max_value=1001, value=239)
@@ -110,4 +110,4 @@ if st.button("Predict"):
     }])
 
     prediction = model.predict(data)[0]
-    st.success(f"Predicted MSRP: ${prediction:,.3f}")
+    st.success(f"Predicted MSRP: ${prediction:,.2f}")
